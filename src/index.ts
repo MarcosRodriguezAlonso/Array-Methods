@@ -62,8 +62,6 @@ let notes: number[] = [];
 
 notes.push(2, 8, 3, 4, 9);
 
-let notesHighestToLowest = notes.toSorted();
-
 console.log(`
 Las notas aprovadas son:
 `);
@@ -88,4 +86,4 @@ let lowestNote = Math.min(...notes);
 
 console.log(`
 La nota más alta es: ${highestNote}
-la nota más baja es: ${lowestNote}`);
+a nota más baja es: ${lowestNote}`);
