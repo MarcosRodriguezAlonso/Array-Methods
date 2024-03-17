@@ -62,28 +62,38 @@ let notes: number[] = [];
 
 notes.push(2, 8, 3, 4, 9);
 
+const highestToLowestNotes = notes.sort();
+
 console.log(`
-Las notas aprovadas son:
+Las notas aprobadas son:
 `);
 
-for (const aprovedNotes of notes) {
-  if (aprovedNotes >= 5) {
-    console.log(aprovedNotes);
+for (const approvedNotes of notes) {
+  if (approvedNotes >= 5) {
+    console.log(approvedNotes);
   }
 }
 
 console.log(`
-El promedio de las notas es:
+La nota media es:
 `);
 
-let notesAdition = notes.reduce((a, b) => a + b, 0);
-let notesAverage = notesAdition / notes.length;
+let notesTotal = 0;
 
-console.log(notesAverage);
+for (let singleNote of notes) {
+  notesTotal += singleNote;
+}
 
-let highestNote = Math.max(...notes);
-let lowestNote = Math.min(...notes);
+const noteAverage = notesTotal / notes.length;
+
+console.log(noteAverage);
 
 console.log(`
-La nota más alta es: ${highestNote}
-a nota más baja es: ${lowestNote}`);
+La nota más alta es:
+
+${highestToLowestNotes.slice(highestToLowestNotes.length - 1)}
+
+La nota más baja es:
+
+${highestToLowestNotes.at(0)}
+`);
